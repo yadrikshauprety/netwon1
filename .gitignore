@@ -1,0 +1,3 @@
+# Dependencies and build output (repo-wide)
+node_modules/
+dist/

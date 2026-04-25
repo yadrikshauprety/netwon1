@@ -1,0 +1,148 @@
+{
+  "topics": [
+    {
+      "id": "mental_healthcare",
+      "title": "Right to Mental Healthcare",
+      "description": "Access mental health services in Nepal.",
+      "legal_basis": [
+        "National Mental Health Policy 1996",
+        "Constitution of Nepal (Article 35)"
+      ],
+      "keywords": ["mental health", "therapy", "treatment", "mental harm"],
+      "content": {
+        "rights": [
+          "Right to access mental health services",
+          "Right to affordable and basic healthcare",
+          "Right to dignity and humane treatment"
+        ],
+        "faqs": {
+          "mental harm": "Mental harm includes emotional abuse, threats, humiliation, fear, and psychological distress.",
+          "who can access": "Every citizen has the right to access mental healthcare services.",
+          "is it free": "Basic services should be accessible and affordable."
+        },
+        "actions": [
+          "Visit nearest government hospital",
+          "Consult licensed mental health professional",
+          "Seek NGO or helpline support"
+        ]
+      }
+    },
+
+    {
+      "id": "dignity_equality",
+      "title": "Right to Dignity & Equality",
+      "description": "No discrimination based on mental health.",
+      "legal_basis": [
+        "Constitution of Nepal (Article 18)"
+      ],
+      "keywords": ["discrimination", "equality", "rights"],
+      "content": {
+        "rights": [
+          "Equal treatment regardless of mental condition",
+          "Protection from discrimination in employment and society"
+        ],
+        "faqs": {
+          "discrimination": "Any unfair treatment due to mental health condition is a violation of this right."
+        },
+        "actions": [
+          "Report discrimination to authorities",
+          "Seek legal aid",
+          "Document evidence"
+        ]
+      }
+    },
+
+    {
+      "id": "confidentiality",
+      "title": "Right to Confidentiality",
+      "description": "Your mental health data must remain private.",
+      "legal_basis": [
+        "Public Health Service Act 2018"
+      ],
+      "keywords": ["privacy", "data", "confidentiality"],
+      "content": {
+        "rights": [
+          "Right to keep medical records private",
+          "No unauthorized sharing of health data"
+        ],
+        "faqs": {
+          "privacy": "Doctors and institutions must not share your mental health data without consent."
+        },
+        "actions": [
+          "File complaint if data is leaked",
+          "Contact hospital administration"
+        ]
+      }
+    },
+
+    {
+      "id": "domestic_violence",
+      "title": "File Domestic Violence Complaint",
+      "description": "Report abuse at any police station.",
+      "legal_basis": [
+        "Domestic Violence Act 2066"
+      ],
+      "keywords": ["abuse", "violence", "complaint"],
+      "content": {
+        "rights": [
+          "Right to report abuse",
+          "Right to protection from domestic violence"
+        ],
+        "faqs": {
+          "how to report": "You can file a complaint at the nearest police station."
+        },
+        "actions": [
+          "Go to nearest police station",
+          "File FIR",
+          "Contact NGOs for support"
+        ]
+      }
+    },
+
+    {
+      "id": "protection_order",
+      "title": "Protection Order",
+      "description": "Court protection from abuser.",
+      "legal_basis": [
+        "Domestic Violence Act 2066 (Sec 6 & 7)"
+      ],
+      "keywords": ["court", "protection", "order"],
+      "content": {
+        "rights": [
+          "Right to legal protection from abuser"
+        ],
+        "faqs": {
+          "what is protection order": "A legal order preventing the abuser from contacting or approaching you."
+        },
+        "actions": [
+          "File case in court",
+          "Request protection order",
+          "Provide evidence"
+        ]
+      }
+    },
+
+    {
+      "id": "legal_aid",
+      "title": "Free Legal Aid",
+      "description": "Free lawyer support if needed.",
+      "legal_basis": [
+        "Legal Aid Act 2054"
+      ],
+      "keywords": ["lawyer", "legal help", "free aid"],
+      "content": {
+        "rights": [
+          "Right to free legal representation"
+        ],
+        "faqs": {
+          "who gets free aid": "People who cannot afford legal services are eligible."
+        },
+        "actions": [
+          "Apply through legal aid office",
+          "Contact NGOs",
+          "Submit eligibility proof"
+        ]
+      }
+    }
+  ]
+}

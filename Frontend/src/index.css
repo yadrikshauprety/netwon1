@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --nav-offset: calc(4rem + env(safe-area-inset-top, 0px));
+
+    --background: 36 33% 97%;
+    --foreground: 20 20% 20%;
+
+    --card: 36 30% 95%;
+    --card-foreground: 20 20% 20%;
+
+    --popover: 36 33% 97%;
+    --popover-foreground: 20 20% 20%;
+
+    --primary: 150 25% 45%;
+    --primary-foreground: 36 33% 97%;
+
+    --secondary: 16 45% 65%;
+    --secondary-foreground: 36 33% 97%;
+
+    --muted: 36 20% 90%;
+    --muted-foreground: 20 10% 50%;
+
+    --accent: 16 45% 65%;
+    --accent-foreground: 36 33% 97%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 36 33% 97%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 150 25% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 36 30% 95%;
+    --sidebar-foreground: 20 20% 20%;
+    --sidebar-primary: 150 25% 45%;
+    --sidebar-primary-foreground: 36 33% 97%;
+    --sidebar-accent: 150 20% 92%;
+    --sidebar-accent-foreground: 150 25% 30%;
+    --sidebar-border: 36 20% 88%;
+    --sidebar-ring: 150 25% 45%;
+
+    /* Custom tokens */
+    --warm-cream: 36 33% 97%;
+    --sage: 150 25% 45%;
+    --sage-light: 150 20% 92%;
+    --sage-dark: 150 25% 30%;
+    --terracotta: 16 45% 65%;
+    --terracotta-light: 16 40% 90%;
+    --rose-soft: 350 40% 88%;
+    --gold-warm: 38 60% 70%;
+
+    /* Sangai chat tokens */
+    --color-background-primary: hsl(var(--background));
+    --color-background-secondary: hsl(var(--muted));
+    --color-border-secondary: hsl(var(--border));
+    --color-border-tertiary: hsl(36 20% 88%);
+    --color-text-secondary: hsl(var(--muted-foreground));
+    --color-text-primary: hsl(var(--foreground));
+
+    --gradient-hero: linear-gradient(135deg, hsl(150 20% 92%), hsl(36 33% 97%), hsl(16 40% 90%));
+    --gradient-card: linear-gradient(145deg, hsl(36 30% 95%), hsl(150 20% 95%));
+    --shadow-soft: 0 4px 20px -4px hsl(20 20% 20% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(20 20% 20% / 0.1);
+
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .dark {
+    --background: 20 20% 12%;
+    --foreground: 36 30% 92%;
+    --card: 20 18% 16%;
+    --card-foreground: 36 30% 92%;
+    --popover: 20 18% 16%;
+    --popover-foreground: 36 30% 92%;
+    --primary: 150 25% 55%;
+    --primary-foreground: 20 20% 12%;
+    --secondary: 16 35% 55%;
+    --secondary-foreground: 36 33% 97%;
+    --muted: 20 15% 22%;
+    --muted-foreground: 36 15% 60%;
+    --accent: 16 35% 55%;
+    --accent-foreground: 36 33% 97%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 36 33% 97%;
+    --border: 20 15% 25%;
+    --input: 20 15% 25%;
+    --ring: 150 25% 55%;
+    --sidebar-background: 20 18% 14%;
+    --sidebar-foreground: 36 30% 92%;
+    --sidebar-primary: 150 25% 55%;
+    --sidebar-primary-foreground: 20 20% 12%;
+    --sidebar-accent: 20 15% 22%;
+    --sidebar-accent-foreground: 36 30% 92%;
+    --sidebar-border: 20 15% 25%;
+    --sidebar-ring: 150 25% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-primary text-primary-foreground rounded-full font-medium 
+           px-5 py-2.5 text-sm transition-all duration-300 hover:shadow-lg hover:scale-105
+           sm:px-8 sm:py-3 sm:text-base;
+  }
+
+  .btn-secondary-hero {
+    @apply border-2 border-primary text-foreground rounded-full font-medium 
+           px-5 py-2.5 text-sm transition-all duration-300 hover:bg-primary hover:text-primary-foreground
+           sm:px-8 sm:py-3 sm:text-base;
+  }
+
+  .card-warm {
+    @apply rounded-2xl p-4 transition-all duration-300 hover:shadow-lg sm:p-6;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .text-display {
+    font-family: 'Playfair Display', serif;
+  }
+}
