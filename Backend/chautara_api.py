@@ -70,19 +70,29 @@ def contains_hate(text):
 def classify(text):
     groq = _get_groq()
     if not groq:
-        return "NEGATIVE"
+        return "POSITIVE" # Default to positive if no AI available
 
     try:
+        # Improved classification for Hindi/Nepali/English and toxicity
+        prompt = f"""
+Analyze this comment for a support group: "{text}"
+
+Is this comment supportive, kind, and positive? 
+Or is it negative, hateful, judgmental, or toxic (in English, Hindi, or Nepali)?
+
+Respond ONLY with 'POSITIVE' or 'NEGATIVE'.
+"""
         res = groq.chat.completions.create(
             messages=[
-                {"role": "system", "content": "Return POSITIVE or NEGATIVE"},
-                {"role": "user", "content": text},
+                {"role": "system", "content": "You are a content moderator for a survivor support group. You only allow supportive and positive comments."},
+                {"role": "user", "content": prompt},
             ],
             model="llama-3.3-70b-versatile",
         )
-        return res.choices[0].message.content.strip().upper()
+        result = res.choices[0].message.content.strip().upper()
+        return "POSITIVE" if "POSITIVE" in result else "NEGATIVE"
     except Exception:
-        return "NEGATIVE"
+        return "POSITIVE"
 
 
 # ---------- RAG ----------
@@ -117,16 +127,17 @@ USER STORY:
 SIMILAR EXPERIENCES:
 {context}
 
-Write 3 realistic replies based on these experiences.
+Write 3 realistic replies from 'Sisters' who have been through similar situations.
 
 Rules:
-- No generic lines
-- Mention feelings/situation
-- 1–2 sentences each
-- Return JSON list
+- Show extreme empathy and remind them "You are not alone."
+- Mention a specific legal measure or step they took (e.g., Filing an FIR, reaching out to an NGO, seeking legal aid, mediation).
+- Keep it supportive and empowering.
+- 1–2 sentences each.
+- Return ONLY a JSON list of strings.
 
 Example:
-["reply1", "reply2", "reply3"]
+["I went through this too, you are not alone. I finally filed an FIR and the police are helping me now.", "You are so brave for sharing. I reached out to a local NGO for legal aid when I was in your shoes.", "We are with you. I sought mediation through the local ward office and it gave me a path forward."]
 """
 
     groq = _get_groq()
@@ -141,7 +152,7 @@ Example:
         )
 
         output = completion.choices[0].message.content
-        print("🧠 RAW:", output)
+        print("RAW RAG OUTPUT:", output)
 
         try:
             parts = json.loads(output)
@@ -168,7 +179,7 @@ Example:
         conn.close()
 
     except Exception as e:
-        print("❌ RAG ERROR:", e)
+        print("RAG ERROR:", e)
 
 
 # ---------- ROUTES (paths relative to include_router prefix) ----------
@@ -193,7 +204,7 @@ async def get_feed():
         return stories
 
     except Exception as e:
-        print("❌ FEED ERROR:", e)
+        print("FEED ERROR:", e)
         return []
 
 
@@ -221,7 +232,7 @@ async def post_story(req: PostReq):
         return {"id": sid}
 
     except Exception as e:
-        print("❌ POST ERROR:", e)
+        print("POST ERROR:", e)
         raise HTTPException(500, "Failed to post")
 
 
